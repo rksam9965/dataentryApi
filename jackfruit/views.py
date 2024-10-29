@@ -66,7 +66,7 @@ class Register(APIView):
 class ManageData(APIView):
     def post(self, request):
         if not is_authenticated(request):
-            return Response({'RESULT_CODE': 0, 'RESULT_MESSAGE': 'Unauthorized'}, status=status.HTTP_401_UNAUTHORIZED)
+           return Response({'RESULT_CODE': 0, 'RESULT_MESSAGE': 'Unauthorized'}, status=status.HTTP_401_UNAUTHORIZED)
 
         data = request.data
         oper = data.get('oper')
