@@ -4,14 +4,14 @@ import django
 from django.utils.encoding import force_str
 django.utils.encoding.force_text = force_str
 
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
-
 # SECURITY WARNING: keep the secret key used in production secret!
+
+
 SECRET_KEY = 'django-insecure-d7s@ynq9gscrrnw!-y%s7j5jw@urmu456#yuq+b(l&+rq^g@!f'
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -24,6 +24,7 @@ CORS_ORIGIN_WHITELIST = (
     'http://localhost:8081',
     'http://localhost:4200'
 )
+
 
 # Application definition
 
@@ -48,7 +49,6 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'corsheaders.middleware.CorsMiddleware',
-    
 ]
 
 
@@ -73,12 +73,27 @@ TEMPLATES = [
 WSGI_APPLICATION = 'loginpage.wsgi.application'
 
 
+CORS_ALLOW_HEADERS = (
+    'accept',
+    'content-type',
+    'enctype',
+    'origin',
+    'x-csrftoken',
+    'auth-session',
+    'auth-token',
+    'platform',
+    'lang-code',
+)
+
+CORS_ALLOW_CREDENTIALS = True
+
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'imman',
+        'NAME': 'powertable',
         'USER': 'root',
-        'PASSWORD': 'imman9965@',
+        'PASSWORD': 'ROOT',
         'HOST': '127.0.0.1',
         'PORT': '3306',
     }
